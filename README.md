@@ -1,4 +1,4 @@
-Taskr
+# Taskr
 
 A Kanban-style application that allows for seamless organization and tracking of tasks and problems.
 This project uses ReactJS for the Frontend, and a Backend powered by FastAPI, Pydantic, and Tortoise-ORM, alongside an Sqlite database. 

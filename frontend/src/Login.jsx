@@ -1,5 +1,29 @@
 import React, { useState } from 'react';
 import { useHistory, Link } from "react-router-dom";
+import styled from 'styled-components';
+
+const Container = styled.div`
+  margin: auto;
+  width: 50%;
+  border: 3px solid black;
+  padding: 20px;
+  border-radius: 10px;
+`;
+
+const LogForm = styled.p`
+  margin: auto;
+  width: 30%;
+  
+  padding: 10px;
+`;
+
+const ButtonSet = styled.button`
+width: 30%; 
+border:none; 
+border-radius:10px; 
+padding:10px;
+   
+`
 
 function Login(props) {
     const [username, setUsername] = useState();
@@ -34,14 +58,14 @@ function Login(props) {
     }
 
     return (
-        <div>
+        <Container>
             <form onSubmit={handleSubmit}>
-                <p>Username: <input type="text" onChange={e => setUsername(e.target.value)} /></p> 
-                <p>Password: <input type="password" onChange={e => setPassword(e.target.value)} /></p>
-                <p><button>Login</button></p>
-                <p><Link to="/register">Register an account</Link></p>
+                <LogForm>Username: <input type="text" onChange={e => setUsername(e.target.value)} /></LogForm> 
+                <LogForm>Password: <input type="password" onChange={e => setPassword(e.target.value)} /></LogForm>
+                <LogForm><ButtonSet>Login</ButtonSet></LogForm>
+                <LogForm><Link to="/register">No account? Create one!</Link></LogForm>
             </form>
-        </div>
+        </Container>
     )
 }
 

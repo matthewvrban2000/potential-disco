@@ -1,4 +1,12 @@
 import React, { useState } from "react";
+import styled from 'styled-components';
+
+const ButtonSet = styled.button`
+display: inline-block;
+border:none; 
+border-radius:10px; 
+padding:10px;
+`
 
 function AddColumn(props) {
     const [showNewColumnButton, setShowNewColumnButton] = useState(true);
@@ -43,7 +51,7 @@ function AddColumn(props) {
         <div>
             {
                 showNewColumnButton ?
-                <button onClick={onNewColumnButtonClick}>New Column</button> :
+                <ButtonSet onClick={onNewColumnButtonClick}>New Column</ButtonSet> :
                 <input type="text" value={value} onChange={handleInputChange} onBlur={onNewColumnInputComplete} />
             }
         </div>

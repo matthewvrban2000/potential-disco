@@ -10,6 +10,18 @@ const Container = styled.div`
   background-color: white;
 `;
 
+const NewButton = styled.button
+`
+ cursor: pointer;
+
+ align-items: center;
+ background: red;
+ border: none;
+ border-radius: 5px;
+ box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+ background: #e62222;
+`
+
 function Task(props) {
 
     function deleteTask(columnId, index, taskId) {
@@ -40,7 +52,7 @@ function Task(props) {
             {provided => (
                 <Container {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
                     {props.task.content}
-                    <span onClick={() => deleteTask(props.columnId, props.index, props.task.id)}> X</span>
+                    <NewButton onClick={() => deleteTask(props.columnId, props.index, props.task.id)}> X</NewButton>
                 </Container>
             )}
         </Draggable>

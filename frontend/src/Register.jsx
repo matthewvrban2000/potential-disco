@@ -1,5 +1,28 @@
 import React, { useState } from 'react';
 import { useHistory, Link } from "react-router-dom";
+import styled from 'styled-components';
+
+const Container = styled.div`
+  margin: auto;
+  width: 50%;
+  border: 3px solid black;
+  padding: 20px;
+  border-radius: 10px;
+  
+`;
+
+const LogForm = styled.p`
+  margin: auto;
+  width: 30%;
+  
+  padding: 10px;
+`;
+
+const ButtonSet = styled.button`
+width: 30%; 
+border:none; 
+border-radius:10px; 
+padding:10px;`
 
 function Register(props) {
     const [username, setUsername] = useState();
@@ -35,14 +58,14 @@ function Register(props) {
     }
 
     return (
-        <div>
+        <Container>
             <form onSubmit={handleSubmit}>
-               <p> Username <input type="text" onChange={e => setUsername(e.target.value)} /></p>
-               <p> Password <input type="password" onChange={e => setPassword(e.target.value)} /> </p>
-                <p><button>Register</button></p>
-               <p> <Link to="/register">Login</Link></p>
+               <LogForm> Username: <input type="text" onChange={e => setUsername(e.target.value)} /></LogForm>
+               <LogForm> Password: <input type="password" onChange={e => setPassword(e.target.value)} /> </LogForm>
+                <LogForm><ButtonSet>Register</ButtonSet></LogForm>
+               <LogForm> <Link to="/login">Click here to login instead</Link></LogForm>
             </form>
-        </div>
+        </Container>
     )
 }
 

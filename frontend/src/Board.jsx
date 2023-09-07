@@ -110,6 +110,7 @@ function Board(props) {
 
     return (
         <DragDropContext onDragEnd={onDragEnd}>
+            
             <AddColumn state={state} setState={setState} />
             <Logout/>
             <Droppable droppableId="all-columns" direction="horizontal" type="column">

@@ -22,6 +22,18 @@ const TaskList = styled.div`
   padding: 8px;
 `;
 
+const NewButton = styled.button
+`
+ cursor: pointer;
+
+ align-items: center;
+ background: red;
+ border: none;
+ border-radius: 5px;
+ box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+ background: #e62222;
+`
+
 function Column(props) {
 
     function deleteColumn(columnId, index) {
@@ -55,7 +67,7 @@ function Column(props) {
                 <Container {...provided.draggableProps} ref={provided.innerRef}>
                     <Title {...provided.dragHandleProps}>
                         {props.column.title}
-                        <span onClick={() => deleteColumn(props.column.id, props.index)}> X</span>
+                        <NewButton onClick={() => deleteColumn(props.column.id, props.index)}>X</NewButton>
                     </Title>
                     <Droppable droppableId={props.column.id} type="task">
                         {provided => (
